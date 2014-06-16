@@ -25,7 +25,7 @@ Oxysoft - /f425/ groovy anarchist
 
 Peter - jvm languages whine moral support
 
-Zygon - the lower level stuff I don't feel confortable doing, taken from Invictus (PacketReader, PacketWriter, Sessions, etc.)
+Zygon - the lower level stuff I don't feel comfortable doing, taken from Invictus (PacketReader, PacketWriter, Sessions, etc.)
 /f425/ convo - moral support
 
 kevin kal el - all the cool accurate packet structures in v83
