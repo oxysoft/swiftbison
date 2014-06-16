@@ -1,0 +1,26 @@
+{
+	database: {
+		host: "localhost"
+		port: 3306
+		database: "swiftbison"
+		username: "root"
+		password: ""
+	}
+
+	server: {
+		maple_version: 83
+		build_version: 3
+
+		server_name: "Swiftbison"
+		enable_pic: true
+
+		event_message: "Sup ppl"
+		channels: 4
+		channel_load: 10
+		world_flag: 0
+
+		exprate: 1
+		mesorate: 1
+		droprate: 1
+	}
+}
