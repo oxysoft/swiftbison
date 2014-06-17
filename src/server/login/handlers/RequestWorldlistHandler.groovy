@@ -19,9 +19,9 @@ class RequestWorldlistHandler extends AbstractPacketHandler {
 	void handlePacket(GameClient c, PacketReader reader) throws Exception {
 		c.updateLoginStatus(LoginStatus.WORLD_SELECTION)
 
-		c.write(LoginPackets.getWorld(c.writer, c))
-		c.write(LoginPackets.getEndOfWorldList(c.writer, c))
-		c.write(LoginPackets.selectWorld(c.writer, c, 0))
-		c.write(LoginPackets.getRecommendedWorlds(c.writer, c))
+		c.write(LoginPackets.getWorld(c.writer))
+		c.write(LoginPackets.getEndOfWorldList(c.writer))
+		c.write(LoginPackets.selectWorld(c.writer, 0))
+		c.write(LoginPackets.getRecommendedWorlds(c.writer))
 	}
 }

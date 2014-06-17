@@ -17,6 +17,8 @@ class RequestCharlistHandler extends AbstractPacketHandler {
 
 	@Override
 	void handlePacket(GameClient c, PacketReader reader) throws Exception {
+		c.updateLoginStatus(LoginStatus.CHARACTER_SELECTION)
+
 		reader.read()
 		c.world = reader.readByte()
 		c.channel = reader.readByte() + 1

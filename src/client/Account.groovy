@@ -25,16 +25,21 @@ class Account {
 
 	public static Account fromResultSet(ResultSet rs) {
 		Account ret = new Account(rs.getString("name"), rs.getString("password"))
-		ret.salt = rs.getString("salt")
-		ret.id = rs.getInt("id")
-		ret.gender = rs.getInt("gender")
-		ret.banned = rs.getInt("banned")
-		ret.banreason = rs.getString("banreason")
-		ret.lastip = rs.getString("lastip")
-		ret.lastmac = rs.getString("lastmac")
-		ret.lastlogin = rs.getTimestamp("lastlogin")?.toLocalDateTime()
-		ret.birthdate = rs.getDate("birthdate")?.toLocalDate()
-		ret.creationdate = rs.getDate("birthdate")?.toLocalDate()
-		return ret
+
+		ret.with {
+			salt = rs.getString("salt")
+			id = rs.getInt("id")
+			gender = rs.getInt("gender")
+			banned = rs.getInt("banned")
+			banreason = rs.getString("banreason")
+			lastip = rs.getString("lastip")
+			lastmac = rs.getString("lastmac")
+			lastlogin = rs.getTimestamp("lastlogin")?.toLocalDateTime()
+			birthdate = rs.getDate("birthdate")?.toLocalDate()
+			creationdate = rs.getDate("birthdate")?.toLocalDate()
+
+		}
+
+		ret
 	}
 }

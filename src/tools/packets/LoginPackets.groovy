@@ -127,11 +127,11 @@ static byte[] getWorld(PacketWriter writer) {
 		write(0) // drop rate * 2.6? wat
 		write(0)
 		write(Hivemind.instance.world.channels.size())
-		for (ChannelServer channel : Hivemind.instance.world.channels) {
-			writeMapleString("$Config.SERVER_NAME - $channel.id ")
+		Hivemind.instance.world.channels.each {
+			writeMapleString("$Config.SERVER_NAME - $it.id ")
 			writeInteger((int) 2 / 10)
 			write(1)
-			writeShort(channel.id - 1)
+			writeShort(it.id - 1)
 		}
 		writeShort(0)
 

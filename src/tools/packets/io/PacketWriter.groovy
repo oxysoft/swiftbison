@@ -154,7 +154,7 @@ public class PacketWriter {
 
     public final byte[] data() {
         try {
-            if (data != null) {
+            if (data) {
                 if (data.length > offset) {
                     trim();
                 }

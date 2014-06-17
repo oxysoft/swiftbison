@@ -5,6 +5,7 @@ import client.login.LoginStatus
 import org.apache.mina.core.session.IoSession
 import server.core.AbstractServerPacketHandler
 import server.login.handlers.AfterLoginHandler
+import server.login.handlers.CreateCharHandler
 import server.login.handlers.LoginPasswordHandler
 import server.login.handlers.RequestCharlistHandler
 import server.login.handlers.RequestWorldlistHandler
@@ -39,10 +40,12 @@ class ServerPacketHandler extends AbstractServerPacketHandler {
 		registerHandler(RecvOpcode.WORLDLIST_REQUEST, new RequestWorldlistHandler())
 		registerHandler(RecvOpcode.WORLDSTATUS_REQUEST, new WorldStatusRequestHandler())
 		registerHandler(RecvOpcode.CHARLIST_REQUEST, new RequestCharlistHandler())
+		registerHandler(RecvOpcode.CREATE_CHAR, new CreateCharHandler())
 	}
 
 	@Override
 	public final void messageReceived(IoSession s, Object msg) {
+		println ""
 		println "Packet received: ${HexTool.toHex(msg as byte[])}"
 		byte[] p = (byte[]) msg
 		GameClient c = (GameClient) s.getAttribute(GameClient.KEY)

@@ -31,6 +31,6 @@ class WorldStatusRequestHandler extends AbstractPacketHandler {
 		else if (sum > Config.CHANNEL_LOAD * 0.80)
 			status = 1
 
-		c.write(LoginPackets.getWorldStatus(c.writer, c, status))
+		c.write(LoginPackets.getWorldStatus(c.writer, status))
 	}
 }
